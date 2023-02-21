@@ -1,21 +1,21 @@
 //Функция проверки длины строки
 const isLessOrEqual = (string, length) => {
   return string.length <= length;
-}
+};
 
 isLessOrEqual('проверяемая строка', 20);
 
 //Палиндром
 const isPalindrome = (string) => {
   const tempString = string
-        .toLowerCase()
-        .replaceAll(' ', '');
+    .toLowerCase()
+    .replaceAll(' ', '');
   let reverseString = '';
   for(let i = tempString.length - 1; i >= 0; i--) {
     reverseString += tempString.at(i);
   }
   return tempString === reverseString;
-}
+};
 
 isPalindrome('ДовОд');
 
@@ -31,7 +31,7 @@ const extractNumb = (string) => {
     }
   }
   return parseInt(result, 10);
-}
+};
 
 extractNumb('ECMAScript 2022');
 
@@ -43,7 +43,7 @@ const myPadSt = (string, minLength, pad) => {
   }
   const tempPad = pad.slice(0, actualPad % pad.length);
   const tempRepeat = pad.repeat(actualPad / pad.length);
-  return tempPad + tempRepeat  + string;
-}
+  return tempPad + tempRepeat + string;
+};
 
 myPadSt('qwerty', 4, '0');
