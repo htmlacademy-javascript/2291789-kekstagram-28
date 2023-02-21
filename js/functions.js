@@ -3,6 +3,8 @@ const isLessOrEqual = (string, length) => {
   return string.length <= length;
 }
 
+isLessOrEqual('проверяемая строка', 20);
+
 //Палиндром
 const isPalindrome = (string) => {
   const tempString = string
@@ -14,6 +16,8 @@ const isPalindrome = (string) => {
   }
   return tempString === reverseString;
 }
+
+isPalindrome('ДовОд');
 
 //Функция извлечения цифр из строк
 const extractNumb = (string) => {
@@ -29,6 +33,8 @@ const extractNumb = (string) => {
   return parseInt(result, 10);
 }
 
+extractNumb('ECMAScript 2022');
+
 //Функция с дополненными указанными символами
 const myPadSt = (string, minLength, pad) => {
   const actualPad = minLength - string.length;
@@ -39,3 +45,5 @@ const myPadSt = (string, minLength, pad) => {
   const tempRepeat = pad.repeat(actualPad / pad.length);
   return tempPad + tempRepeat  + string;
 }
+
+myPadSt('qwerty', 4, '0');
