@@ -1,7 +1,5 @@
 //Функция проверки длины строки
-const isLessOrEqual = (string, length) => {
-  return string.length <= length;
-};
+const isLessOrEqual = (string, length) => string.length <= length;
 
 isLessOrEqual('проверяемая строка', 20);
 
