@@ -1,4 +1,3 @@
-'use strict';
 const PICTURE_COUNT = 25;
 const AVATAR_COUNT = 6;
 const LIKE_MIN_COUNT = 15;
@@ -52,12 +51,6 @@ const createIdGenerator = () => {
   };
 };
 
-function getRandomNumber(min,max){
-  const numbers =  [...document.querySelectorAll('.vertical__date')].map(el => +el.textContent || 0);
-  let random_number = Math.floor(Math.random() * (max - min)) + min;
-  return !numbers.includes(random_number) ? random_number : getRandomNumber(min,max);
-}
-
 const generateCommentId = createIdGenerator();
 const generateCommentIdMain = createIdGenerator();
 
@@ -66,14 +59,14 @@ const createMessage = () =>
     getRandomArrayElement(COMMENT_LINES)
   ).join(' ');
 
-const createComment = () => ( {
+const createComment = () => ({
   id: generateCommentId(),
   avatar: `img/avatar-${getRandomInteger(1, AVATAR_COUNT)}.svg`,
   message: createMessage(),
   name: getRandomArrayElement(NAMES),
 });
 
-const createPicture = (index) => ({
+const createPicture = () => ({
   id: generateCommentIdMain(),
   url: `photos/${getRandomInteger(0, ID_COUNT)}.jpg`,
   description: getRandomArrayElement(DESCRIPTIONS),
